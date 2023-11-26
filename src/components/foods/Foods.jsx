@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import classes from './foods.module.css'
 
 import { useSelector } from 'react-redux'
+import { config } from '../../Constants';
+const CLI = config.url;
 
 
 
@@ -31,7 +33,7 @@ const Foods = () => {
             ))} */}
 
             {token !== null ? foodTypes.map((foodType) => (
-              <Link to={`/foods/${foodType.name}`} key={foodType.id} className={classes.food}>
+              <Link to={`${CLI}/foods/${foodType.name}`} key={foodType.id} className={classes.food}>
                 <h4>{foodType.name}</h4>
                 <div className={classes.imgContainer}>
                   <img src={foodType.img} alt="" />
